@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="viewmodel"
+                type="com.example.dev.cameraapp.ui.viewModels.StartFragmentViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/additional_params"
+                android:textSize="16sp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+                android:id="@+id/video_duration_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/video_duration"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:afterTextChanged="@{(edtitable)->viewmodel.afterVideoDurationChanged(edtitable)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"/>
+
+
+        <EditText
+                android:id="@+id/video_frame_rate_editText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/video_frame_rate"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:afterTextChanged="@{(edtitable)->viewmodel.afterVideoFrameRateChanged(edtitable)}"
+                app:layout_constraintStart_toStartOf="@+id/video_duration_editText"
+                app:layout_constraintTop_toBottomOf="@id/video_duration_editText"
+                app:layout_constraintEnd_toEndOf="@+id/video_duration_editText"/>
+
+        <Button
+                android:id="@+id/start_camera_btn"
+                style="@style/CameraAppButton"
+                android:text="@string/start_camera"
+                android:onClick="@{viewmodel.startCamera}"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/video_frame_rate_editText"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

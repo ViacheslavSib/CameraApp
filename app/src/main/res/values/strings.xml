@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CameraApp</string>
+
+    <string name="start_camera">Start camera</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="description_info">Info</string>
+    <string name="permission_request">This sample needs permission for camera and audio recording.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="cannot_access_camera">Cannot access the camera.</string>
+    <string name="intro_message">Info</string>
+    <string name="send_to">Send to</string>
+    <string name="additional_params">Please, add additional parameters:</string>
+    <string name="video_duration">Video duration, sec</string>
+    <string name="video_frame_rate">Video frame rate</string>
+</resources>

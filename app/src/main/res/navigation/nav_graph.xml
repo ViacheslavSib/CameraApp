@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/startFragment">
+
+    <fragment android:id="@+id/startFragment"
+              android:name="com.example.dev.cameraapp.ui.StartFragment"
+              android:label="StartFragment"
+              tools:layout="@layout/start_fragment"/>
+
+    <fragment android:id="@+id/cameraFragment"
+              android:name="com.example.dev.cameraapp.ui.CameraFragment"
+              android:label="camera_fragment"
+              tools:layout="@layout/camera_fragment"/>
+</navigation>
